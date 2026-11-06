@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- item_task.xml: the layout of ONE row in the task list.
+     The adapter (Step 6) uses this layout once for every task. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:minHeight="72dp"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingTop="12dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="12dp">
+
+    <!-- Checkbox: tick it to mark the task as completed.
+         48dp x 48dp is the recommended minimum touch size on Android.
+         focusable="false" lets the row and checkbox both receive taps
+         correctly inside a ListView. -->
+    <CheckBox
+        android:id="@+id/checkboxCompleted"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/toast_task_completed"
+        android:focusable="false"
+        app:buttonTint="@color/purple_primary" />
+
+    <!-- Text area: title on top, priority and status underneath -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Task title: main text, so it uses the dark text color.
+             The adapter adds a strikethrough when the task is completed. -->
+        <TextView
+            android:id="@+id/textTaskTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Finish HCI report" />
+
+        <!-- Priority and status on one line -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <!-- Priority: the adapter colors it red, orange or green -->
+            <TextView
+                android:id="@+id/textTaskPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Priority: High"
+                tools:textColor="@color/priority_high_color" />
+
+            <!-- Status: secondary text, so it uses the grey color -->
+            <TextView
+                android:id="@+id/textTaskStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/text_grey"
+                android:textSize="14sp"
+                tools:text="Pending" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

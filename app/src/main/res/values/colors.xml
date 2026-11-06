@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Original colors from the template (kept) -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ============ StudentTaskMate color scheme ============ -->
+
+    <!-- PRIMARY PURPLE: top app bar background, buttons (Add Task, Save),
+         checkboxes and any active/selected icons -->
+    <color name="purple_primary">#6750A4</color>
+
+    <!-- LIGHT PURPLE: overall app background -->
+    <color name="purple_light">#EDE7F6</color>
+
+    <!-- TEXT DARK: main titles, important text, icons where needed -->
+    <color name="text_dark">#1C1B1F</color>
+
+    <!-- TEXT GREY: secondary text, hints, descriptions -->
+    <color name="text_grey">#5F5B66</color>
+
+    <!-- ============ Priority colors ============ -->
+
+    <!-- HIGH PRIORITY: "High" labels and urgent task indicators -->
+    <color name="priority_high_color">#C62828</color>
+
+    <!-- MEDIUM PRIORITY: "Medium" labels and normal task indicators -->
+    <color name="priority_medium_color">#E65100</color>
+
+    <!-- LOW PRIORITY: "Low" labels, and completed or less urgent tasks -->
+    <color name="priority_low_color">#2E7D32</color>
+
+    <!-- ============ Borders and dividers ============ -->
+
+    <!-- BORDER: outline of input fields (the task title box) -->
+    <color name="border_color">#79747E</color>
+
+    <!-- DIVIDER: thin lines between items in the task list -->
+    <color name="divider_color">#CAC4D0</color>
+</resources>

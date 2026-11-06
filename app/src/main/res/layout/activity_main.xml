@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_main.xml: the MAIN screen.
+     IMPORTANT: the root keeps android:id="@+id/main" because the
+     edge-to-edge code in MainActivity.java uses R.id.main. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_light"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- HEADER: primary purple background, white text on top -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_primary"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- App name -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <!-- Welcome message -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/welcome_message"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- COUNTS: how many tasks are pending and completed.
+         The text is filled in by MainActivity.java (Step 8). -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/textPendingCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/text_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Pending: 2" />
+
+        <TextView
+            android:id="@+id/textCompletedCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textColor="@color/text_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Completed: 1" />
+    </LinearLayout>
+
+    <!-- LIST AREA: takes all the remaining space (weight = 1).
+         The ListView and the empty message sit on top of each other;
+         only one of them shows at a time. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1">
+
+        <!-- The task list. Thin divider lines separate the rows. -->
+        <ListView
+            android:id="@+id/listViewTasks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:divider="@color/divider_color"
+            android:dividerHeight="1dp" />
+
+        <!-- Shown instead of the list when there are no tasks -->
+        <TextView
+            android:id="@+id/textEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text="@string/empty_message"
+            android:textColor="@color/text_grey"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <!-- ADD TASK BUTTON: primary purple, white text,
+         56dp tall for a comfortable touch target -->
+    <Button
+        android:id="@+id/buttonAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/purple_primary"
+        android:text="@string/add_task_button"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>
